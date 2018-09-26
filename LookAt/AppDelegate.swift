@@ -13,10 +13,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    ///字体缩放比例
+    var fontSize:CGFloat = 0.0
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         createRootController()
+        fontSizeScale()
         return true
     }
 
@@ -43,9 +46,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
-    //设置根视图
+    ///设置根视图
     func createRootController() {
-        
+        self.window = UIWindow(frame: SCREEN_RECT)
+        self.window?.makeKeyAndVisible()
+        self.window?.rootViewController = LookAtTabBarViewController()
+    }
+    
+    ///font size scale
+    func fontSizeScale(withScale scale:CGFloat) -> CGFloat {
+        return self.fontSize*scale
+    }
+    
+    ///font size scale
+    func fontSizeScale() {
+        if iPhone8P || iPhoneXSMax || iPhoneXR {
+            self.fontSize = 1.1
+        } else if iPhone8 || iPhoneX {
+            self.fontSize = 1.0
+        } else if iPhoneSE {
+            self.fontSize = 0.9
+        } else if iPhone4s {
+            self.fontSize = 0.7
+        } else {
+            self.fontSize = 1.5
+        }
     }
 }
 
