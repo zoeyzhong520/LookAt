@@ -132,11 +132,11 @@ class HomeAdvertisingPageView: BaseView {
             currentImageIndex = (currentImageIndex+imageCount-1)%imageCount
         }
         
-        //设置图片
-        centerImageView.kf.setImage(with: URL(string: tmpImagesPath[currentImageIndex] ?? ""), placeholder: UIImage.placeholderImage)
-        
         leftImageIndex = (currentImageIndex+imageCount-1)%imageCount
         rightImageIndex = (currentImageIndex+1)%imageCount
+        
+        //设置图片
+        centerImageView.kf.setImage(with: URL(string: tmpImagesPath[currentImageIndex] ?? ""), placeholder: UIImage.placeholderImage)
         leftImageView.kf.setImage(with: URL(string: tmpImagesPath[leftImageIndex] ?? ""), placeholder: UIImage.placeholderImage)
         rightImageView.kf.setImage(with: URL(string: tmpImagesPath[rightImageIndex] ?? ""), placeholder: UIImage.placeholderImage)
     }
