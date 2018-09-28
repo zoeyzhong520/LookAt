@@ -15,6 +15,10 @@ class HomeHeaderView: BaseView {
     ///ad view
     fileprivate lazy var adPageView:HomeAdvertisingPageView = {
         let adPageView = HomeAdvertisingPageView(frame: self.bounds)
+        adPageView.animateDuration = 2
+        adPageView.block = { [weak self] currentIndex in
+            log(message: currentIndex)
+        }
         return adPageView
     }()
 

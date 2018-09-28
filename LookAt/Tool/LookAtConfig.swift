@@ -91,3 +91,12 @@ let iPhoneXSMax = IS_IPHONE && SCREEN_MAX_LENGTH == 896.0
 ///iphonexr
 let iPhoneXR = IS_IPHONE && SCREEN_MAX_LENGTH == 896.0
 
+/*
+ 通知
+ */
+
+/*
+ 闭包
+ */
+///commonBlock
+typealias commonBlock<T> = (T) -> Void

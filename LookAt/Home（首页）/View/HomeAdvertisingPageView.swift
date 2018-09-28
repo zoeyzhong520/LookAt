@@ -60,6 +60,30 @@ class HomeAdvertisingPageView: BaseView {
     ///timer
     fileprivate var timer:Timer?
     
+    ///enableAutoScroll，默认true
+    var enableAutoScroll:Bool? {
+        didSet {
+            if enableAutoScroll == true {
+                startTimer()
+            } else {
+                stopTimer()
+            }
+        }
+    }
+    
+    ///animate duration，默认5s
+    var animateDuration:Double? {
+        didSet {
+            if timer != nil {
+                stopTimer()
+            }
+            startTimer()
+        }
+    }
+    
+    ///block
+    var block:commonBlock<Int>?
+    
     ///imagesPath
     var imagesPathArray:[String?]? {
         didSet {
@@ -90,6 +114,15 @@ class HomeAdvertisingPageView: BaseView {
             make.left.right.centerY.equalToSuperview()
             make.height.equalTo(fontSizeScale(30))
         }
+        
+        //默认值
+        enableAutoScroll = true
+        
+        //监听
+        registerNotification()
+        
+        //手势
+        addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(tapClick(_:))))
     }
     
     //config scrollView
@@ -111,15 +144,12 @@ class HomeAdvertisingPageView: BaseView {
         
         //pageControl numberOfPages
         pageControl.numberOfPages = tmpImagesPath.count
-        
-        //timer
-        startTimer()
     }
     
     //reload images
     fileprivate func reloadImages() {
         guard let tmpImagesPath = imagesPathArray else {
-            fatalError("imagesPath不能为nil")
+            fatalError("imagesPath为nil")
         }
         
         var leftImageIndex:Int = 0
@@ -142,14 +172,14 @@ class HomeAdvertisingPageView: BaseView {
     }
     
     //设置timer
-    fileprivate func startTimer() {
+    @objc fileprivate func startTimer() {
         if timer == nil {
-            timer = Timer(timeInterval: 2, target: self, selector: #selector(timeMove), userInfo: nil, repeats: true)
+            timer = Timer(timeInterval: animateDuration ?? 5, target: self, selector: #selector(timeMove), userInfo: nil, repeats: true)
             RunLoop.main.add(timer!, forMode: .common)
         }
     }
     
-    fileprivate func stopTimer() {
+    @objc fileprivate func stopTimer() {
         if let tmpTimer = timer {
             tmpTimer.invalidate()
         }
@@ -159,6 +189,27 @@ class HomeAdvertisingPageView: BaseView {
     @objc fileprivate func timeMove() {
         scrollView.setContentOffset(CGPoint(x: SCREEN_WIDTH*2, y: 0), animated: true)
     }
+    
+    //设置监听
+    fileprivate func registerNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(stopTimer), name: UIApplication.didEnterBackgroundNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(stopTimer), name: UIApplication.willTerminateNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(startTimer), name: UIApplication.didBecomeActiveNotification, object: nil)
+    }
+    
+    //tapClick
+    @objc fileprivate func tapClick(_ gesture:UITapGestureRecognizer) {
+        if block != nil {
+            block!(currentImageIndex)
+        }
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+        log(message: "deinit")
+    }
 }
 
 extension HomeAdvertisingPageView:UIScrollViewDelegate {
@@ -167,14 +218,14 @@ extension HomeAdvertisingPageView:UIScrollViewDelegate {
         reloadImages()
         scrollView.contentOffset = CGPoint(x: SCREEN_WIDTH, y: 0)
         pageControl.currentPage = currentImageIndex
-        print("currentImageIndex = \(currentImageIndex)")
+        log(message: currentImageIndex)
     }
     
     func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
         reloadImages()
         scrollView.contentOffset = CGPoint(x: SCREEN_WIDTH, y: 0)
         pageControl.currentPage = currentImageIndex
-        print("currentImageIndex = \(currentImageIndex)")
+        log(message: currentImageIndex)
     }
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {

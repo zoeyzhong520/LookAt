@@ -49,6 +49,7 @@
 		36B72436215A3D2400940A3D /* MeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B72435215A3D2400940A3D /* MeModel.swift */; };
 		36B72438215A3D3200940A3D /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B72437215A3D3200940A3D /* MeViewController.swift */; };
 		36B7243B215A3E1400940A3D /* LookAtTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7243A215A3E1400940A3D /* LookAtTabBarViewController.swift */; };
+		BA1EFE47215E6D6C0067698A /* LogTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1EFE46215E6D6C0067698A /* LogTool.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -211,6 +212,7 @@
 		36B72435215A3D2400940A3D /* MeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeModel.swift; sourceTree = "<group>"; };
 		36B72437215A3D3200940A3D /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		36B7243A215A3E1400940A3D /* LookAtTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookAtTabBarViewController.swift; sourceTree = "<group>"; };
+		BA1EFE46215E6D6C0067698A /* LogTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogTool.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				3677B8D1215B6E0A00728EF9 /* LookAtConfig.swift */,
+				BA1EFE46215E6D6C0067698A /* LogTool.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -797,6 +800,7 @@
 				3677B9E7215E033300728EF9 /* UILabel+Extension.swift in Sources */,
 				3677B90E215DD32500728EF9 /* BaseNavigationViewController.swift in Sources */,
 				36B7241C215A3C2700940A3D /* BaseViewController.swift in Sources */,
+				BA1EFE47215E6D6C0067698A /* LogTool.swift in Sources */,
 				36B72422215A3C5700940A3D /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -997,6 +1001,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_CFLAGS = (
+					"-D",
+					DEBUG,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.LookAt.LookAt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -1017,6 +1025,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_CFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.LookAt.LookAt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
