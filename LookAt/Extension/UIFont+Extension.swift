@@ -22,7 +22,7 @@ extension UIFont {
     
     ///导航栏标题字体
     static var navigationTitleFont:UIFont {
-        return self.lookAtFont(17)
+        return self.lookAtFont(14)
     }
     
     ///超大号字体

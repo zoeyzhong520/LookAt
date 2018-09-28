@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SnapKit
+import Kingfisher
 
 /*
  尺寸
@@ -28,6 +30,21 @@ let NAVIGATIONBAR_HEIGHT:CGFloat = 44
 
 ///content height
 let CONTENT_HEIGHT = SCREEN_HEIGHT - STATUSBAR_HEIGHT - NAVIGATIONBAR_HEIGHT
+
+///searchBar height
+let SEARCHBAR_HEIGHT:CGFloat = 34
+
+///cornerRadius
+let CORNERRADIUS:CGFloat = 5
+
+///自适应字体大小
+let fontSizeScale:(CGFloat) -> CGFloat = { scale in
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    return appDelegate.fontSizeScale(withScale: scale)
+}
+
+///home banner height
+let HOME_BANNER_HEIGHT = fontSizeScale(180) + STATUSBAR_HEIGHT
 
 /*
  设备
@@ -74,8 +91,3 @@ let iPhoneXSMax = IS_IPHONE && SCREEN_MAX_LENGTH == 896.0
 ///iphonexr
 let iPhoneXR = IS_IPHONE && SCREEN_MAX_LENGTH == 896.0
 
-///自适应字体大小
-let fontSizeScale:(CGFloat) -> CGFloat = { scale in
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    return appDelegate.fontSizeScale(withScale: scale)
-}

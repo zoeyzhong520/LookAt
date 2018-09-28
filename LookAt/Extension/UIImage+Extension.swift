@@ -29,4 +29,16 @@ extension UIImage {
     static var meTabBarIcon:UIImage? {
         return UIImage(named: "我的")?.withRenderingMode(.alwaysTemplate)
     }
+    
+    ///placeholderImage
+    static var placeholderImage:UIImage? {
+        return UIImage(named: "网络图片加载占位图")
+    }
+    
+    ///searchImage
+    static var searchImage:UIImage? {
+        return UIImage(named: "搜索")
+    }
+    
+    
 }

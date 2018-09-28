@@ -20,6 +20,8 @@ class BaseViewController: UIViewController {
     //UI
     func createBaseUI() {
         view.backgroundColor = .white
+        
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font:UIFont.navigationTitleFont, NSAttributedString.Key.foregroundColor:UIColor.blackTextColor];
     }
 
 }
