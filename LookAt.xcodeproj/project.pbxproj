@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3635BA35215F53F800FAE00D /* HomeHotScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3635BA34215F53F800FAE00D /* HomeHotScrollView.swift */; };
 		3677B8CC215B685800728EF9 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3677B8CB215B685800728EF9 /* UIImage+Extension.swift */; };
 		3677B8D2215B6E0A00728EF9 /* LookAtConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3677B8D1215B6E0A00728EF9 /* LookAtConfig.swift */; };
 		3677B8D4215B7A3C00728EF9 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3677B8D3215B7A3C00728EF9 /* UIFont+Extension.swift */; };
@@ -26,6 +27,13 @@
 		3677B9F0215E15AC00728EF9 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3677B9EF215E15AC00728EF9 /* UICollectionView+Extension.swift */; };
 		3677B9F4215E1D3D00728EF9 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3677B9F3215E1D3D00728EF9 /* String+Extension.swift */; };
 		3677B9F6215E21D000728EF9 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3677B9F5215E21D000728EF9 /* UIViewController+Extension.swift */; };
+		3677B9FA215F148800728EF9 /* HomeTableSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3677B9F9215F148800728EF9 /* HomeTableSectionHeaderView.swift */; };
+		3677BA03215F15A100728EF9 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3677BA02215F15A100728EF9 /* UIButton+Extension.swift */; };
+		3677BA05215F27E300728EF9 /* HomeHotTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3677BA04215F27E300728EF9 /* HomeHotTableViewCell.swift */; };
+		3677BA07215F280000728EF9 /* HomeRecommendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3677BA06215F280000728EF9 /* HomeRecommendTableViewCell.swift */; };
+		3677BA09215F282800728EF9 /* HomeLeaderboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3677BA08215F282800728EF9 /* HomeLeaderboardTableViewCell.swift */; };
+		3677BA0B215F285700728EF9 /* HomeBusinessTopicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3677BA0A215F285700728EF9 /* HomeBusinessTopicTableViewCell.swift */; };
+		3677BA0E215F290900728EF9 /* LookAtButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3677BA0D215F290900728EF9 /* LookAtButton.swift */; };
 		36B723D9215A383D00940A3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B723D8215A383D00940A3D /* AppDelegate.swift */; };
 		36B723DB215A383D00940A3D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B723DA215A383D00940A3D /* ViewController.swift */; };
 		36B723DE215A383D00940A3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36B723DC215A383D00940A3D /* Main.storyboard */; };
@@ -162,6 +170,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3635BA34215F53F800FAE00D /* HomeHotScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHotScrollView.swift; sourceTree = "<group>"; };
 		3677B8CB215B685800728EF9 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		3677B8D1215B6E0A00728EF9 /* LookAtConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookAtConfig.swift; sourceTree = "<group>"; };
 		3677B8D3215B7A3C00728EF9 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
@@ -183,6 +192,13 @@
 		3677B9EF215E15AC00728EF9 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
 		3677B9F3215E1D3D00728EF9 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		3677B9F5215E21D000728EF9 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		3677B9F9215F148800728EF9 /* HomeTableSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableSectionHeaderView.swift; sourceTree = "<group>"; };
+		3677BA02215F15A100728EF9 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		3677BA04215F27E300728EF9 /* HomeHotTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHotTableViewCell.swift; sourceTree = "<group>"; };
+		3677BA06215F280000728EF9 /* HomeRecommendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRecommendTableViewCell.swift; sourceTree = "<group>"; };
+		3677BA08215F282800728EF9 /* HomeLeaderboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLeaderboardTableViewCell.swift; sourceTree = "<group>"; };
+		3677BA0A215F285700728EF9 /* HomeBusinessTopicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBusinessTopicTableViewCell.swift; sourceTree = "<group>"; };
+		3677BA0D215F290900728EF9 /* LookAtButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookAtButton.swift; sourceTree = "<group>"; };
 		36B723D5215A383D00940A3D /* LookAt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LookAt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36B723D8215A383D00940A3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		36B723DA215A383D00940A3D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -255,6 +271,7 @@
 				3677B9EF215E15AC00728EF9 /* UICollectionView+Extension.swift */,
 				3677B9F3215E1D3D00728EF9 /* String+Extension.swift */,
 				3677B9F5215E21D000728EF9 /* UIViewController+Extension.swift */,
+				3677BA02215F15A100728EF9 /* UIButton+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -304,6 +321,14 @@
 				3677B9ED215E0BDD00728EF9 /* Reusable.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		3677BA0C215F28EB00728EF9 /* LookAtButton */ = {
+			isa = PBXGroup;
+			children = (
+				3677BA0D215F290900728EF9 /* LookAtButton.swift */,
+			);
+			path = LookAtButton;
 			sourceTree = "<group>";
 		};
 		36B723CC215A383D00940A3D = {
@@ -400,6 +425,12 @@
 				36B72425215A3C9500940A3D /* HomeView.swift */,
 				3677B90F215DDC5700728EF9 /* HomeHeaderView.swift */,
 				3677B911215DDCBF00728EF9 /* HomeAdvertisingPageView.swift */,
+				3677B9F9215F148800728EF9 /* HomeTableSectionHeaderView.swift */,
+				3677BA04215F27E300728EF9 /* HomeHotTableViewCell.swift */,
+				3677BA06215F280000728EF9 /* HomeRecommendTableViewCell.swift */,
+				3677BA08215F282800728EF9 /* HomeLeaderboardTableViewCell.swift */,
+				3677BA0A215F285700728EF9 /* HomeBusinessTopicTableViewCell.swift */,
+				3635BA34215F53F800FAE00D /* HomeHotScrollView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -509,6 +540,7 @@
 		36B72416215A3C0400940A3D /* Public（公共） */ = {
 			isa = PBXGroup;
 			children = (
+				3677BA0C215F28EB00728EF9 /* LookAtButton */,
 				36B72439215A3DF000940A3D /* TabBar */,
 				36B72417215A3C0400940A3D /* Base */,
 			);
@@ -768,11 +800,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3677BA05215F27E300728EF9 /* HomeHotTableViewCell.swift in Sources */,
 				3677B8D4215B7A3C00728EF9 /* UIFont+Extension.swift in Sources */,
 				3677B9F4215E1D3D00728EF9 /* String+Extension.swift in Sources */,
 				36B72438215A3D3200940A3D /* MeViewController.swift in Sources */,
+				3677BA0E215F290900728EF9 /* LookAtButton.swift in Sources */,
 				3677B9B9215DF75A00728EF9 /* UIImageView+Extension.swift in Sources */,
 				36B72424215A3C6F00940A3D /* HomeModel.swift in Sources */,
+				3677BA03215F15A100728EF9 /* UIButton+Extension.swift in Sources */,
 				3677B9F0215E15AC00728EF9 /* UICollectionView+Extension.swift in Sources */,
 				3677B8D6215B7D7100728EF9 /* UIColor+Extension.swift in Sources */,
 				36B72428215A3CBE00940A3D /* OldBirdView.swift in Sources */,
@@ -783,18 +818,23 @@
 				3677B9F6215E21D000728EF9 /* UIViewController+Extension.swift in Sources */,
 				36B7242C215A3CDD00940A3D /* OldBirdViewController.swift in Sources */,
 				36B723D9215A383D00940A3D /* AppDelegate.swift in Sources */,
+				3635BA35215F53F800FAE00D /* HomeHotScrollView.swift in Sources */,
 				3677B9E5215E025900728EF9 /* UIView+Extension.swift in Sources */,
+				3677BA07215F280000728EF9 /* HomeRecommendTableViewCell.swift in Sources */,
 				3677B8D2215B6E0A00728EF9 /* LookAtConfig.swift in Sources */,
 				3677B910215DDC5700728EF9 /* HomeHeaderView.swift in Sources */,
 				36B72420215A3C4300940A3D /* BaseView.swift in Sources */,
+				3677BA0B215F285700728EF9 /* HomeBusinessTopicTableViewCell.swift in Sources */,
 				36B7243B215A3E1400940A3D /* LookAtTabBarViewController.swift in Sources */,
 				3677B912215DDCBF00728EF9 /* HomeAdvertisingPageView.swift in Sources */,
 				36B72434215A3D1700940A3D /* MeView.swift in Sources */,
 				3677B9E9215E090700728EF9 /* UITableView+Extension.swift in Sources */,
 				36B7241E215A3C3800940A3D /* BaseModel.swift in Sources */,
+				3677BA09215F282800728EF9 /* HomeLeaderboardTableViewCell.swift in Sources */,
 				36B72436215A3D2400940A3D /* MeModel.swift in Sources */,
 				36B72430215A3CFA00940A3D /* NewsModel.swift in Sources */,
 				36B72426215A3C9500940A3D /* HomeView.swift in Sources */,
+				3677B9FA215F148800728EF9 /* HomeTableSectionHeaderView.swift in Sources */,
 				3677B9EE215E0BDD00728EF9 /* Reusable.swift in Sources */,
 				3677B8CC215B685800728EF9 /* UIImage+Extension.swift in Sources */,
 				3677B9E7215E033300728EF9 /* UILabel+Extension.swift in Sources */,

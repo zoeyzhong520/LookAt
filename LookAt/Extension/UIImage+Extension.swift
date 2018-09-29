@@ -40,5 +40,18 @@ extension UIImage {
         return UIImage(named: "搜索")
     }
     
+    ///pageControlNormalImage
+    static var pageControlNormalImage:UIImage? {
+        return UIImage(named: "pageControl_normal")
+    }
     
+    ///pageControlSelectImage
+    static var pageControlSelectImage:UIImage? {
+        return UIImage(named: "pageControl_select")
+    }
+    
+    ///changeBatchImage
+    static var changeBatchImage:UIImage? {
+        return UIImage(named: "换一批")
+    }
 }

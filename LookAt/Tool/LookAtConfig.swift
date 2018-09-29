@@ -46,6 +46,9 @@ let fontSizeScale:(CGFloat) -> CGFloat = { scale in
 ///home banner height
 let HOME_BANNER_HEIGHT = fontSizeScale(180) + STATUSBAR_HEIGHT
 
+///homeVC table section height
+let HOMEVC_TABLE_SECTION_HEIGHT = fontSizeScale(56)
+
 /*
  设备
  */
@@ -100,3 +103,6 @@ let iPhoneXR = IS_IPHONE && SCREEN_MAX_LENGTH == 896.0
  */
 ///commonBlock
 typealias commonBlock<T> = (T) -> Void
+
+///noneParamsBlock
+typealias noneParamsBlock = () -> Void

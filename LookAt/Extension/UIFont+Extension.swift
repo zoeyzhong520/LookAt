@@ -27,7 +27,7 @@ extension UIFont {
     
     ///超大号字体
     static var superBigFont:UIFont {
-        return self.lookAtFont(18)
+        return self.lookAtFont(22)
     }
     
     ///大号字体
@@ -43,5 +43,20 @@ extension UIFont {
     ///小号字体
     static var smallFont:UIFont {
         return self.lookAtFont(12)
+    }
+    
+    ///超大号加粗字体
+    static var superBigBoldFont:UIFont {
+        return self.lookAtBoldFont(22)
+    }
+    
+    ///大号加粗字体
+    static var bigBoldFont:UIFont {
+        return self.lookAtBoldFont(16)
+    }
+    
+    ///中号加粗字体
+    static var mediumBoldFont:UIFont {
+        return self.lookAtBoldFont(14)
     }
 }

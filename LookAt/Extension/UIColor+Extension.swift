@@ -29,4 +29,14 @@ extension UIColor {
     static var grayTextColor:UIColor {
         return self.RGB(175,175,175)
     }
+    
+    ///蒙层颜色
+    static var mongolianColor:UIColor {
+        return self.RGBA(0,0,0,0.2)
+    }
+    
+    ///分割线条颜色
+    static var lineColor:UIColor {
+        return self.RGB(246,247,250)
+    }
 }

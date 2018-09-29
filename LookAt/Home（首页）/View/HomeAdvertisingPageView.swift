@@ -30,6 +30,10 @@ class HomeAdvertisingPageView: BaseView {
         let pageControl = UIPageControl(frame: .zero)
         pageControl.currentPage = 0
         pageControl.isUserInteractionEnabled = false
+        pageControl.hidesForSinglePage = true
+        pageControl.setValue(UIImage.pageControlSelectImage, forKeyPath: "_currentPageImage")//选中
+        pageControl.setValue(UIImage.pageControlNormalImage, forKeyPath: "_pageImage")//未选中
+//        pageControl.backgroundColor = UIColor.mongolianColor
         return pageControl
     }()
     
@@ -60,6 +64,8 @@ class HomeAdvertisingPageView: BaseView {
     ///timer
     fileprivate var timer:Timer?
     
+    //MARK: - 开放接口
+    /*************************************************************/
     ///enableAutoScroll，默认true
     var enableAutoScroll:Bool? {
         didSet {
@@ -90,6 +96,8 @@ class HomeAdvertisingPageView: BaseView {
             configScrollView()
         }
     }
+    /*************************************************************/
+    //MARK: -
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -111,7 +119,8 @@ class HomeAdvertisingPageView: BaseView {
         
         //添加约束
         self.pageControl.snp.makeConstraints { (make) in
-            make.left.right.centerY.equalToSuperview()
+            make.bottom.equalTo(-SEARCHBAR_HEIGHT*2)
+            make.left.right.equalToSuperview()
             make.height.equalTo(fontSizeScale(30))
         }
         
@@ -125,6 +134,24 @@ class HomeAdvertisingPageView: BaseView {
         addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(tapClick(_:))))
     }
     
+    //设置监听
+    fileprivate func registerNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(stopTimer), name: UIApplication.didEnterBackgroundNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(stopTimer), name: UIApplication.willTerminateNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(startTimer), name: UIApplication.didBecomeActiveNotification, object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+        log(message: "deinit")
+    }
+}
+
+extension HomeAdvertisingPageView {
+    
+    //MARK: 布局
     //config scrollView
     fileprivate func configScrollView() {
         guard let tmpImagesPath = imagesPathArray else {
@@ -171,6 +198,7 @@ class HomeAdvertisingPageView: BaseView {
         rightImageView.kf.setImage(with: URL(string: tmpImagesPath[rightImageIndex] ?? ""), placeholder: UIImage.placeholderImage)
     }
     
+    //MARK: Timer
     //设置timer
     @objc fileprivate func startTimer() {
         if timer == nil {
@@ -190,25 +218,11 @@ class HomeAdvertisingPageView: BaseView {
         scrollView.setContentOffset(CGPoint(x: SCREEN_WIDTH*2, y: 0), animated: true)
     }
     
-    //设置监听
-    fileprivate func registerNotification() {
-        NotificationCenter.default.addObserver(self, selector: #selector(stopTimer), name: UIApplication.didEnterBackgroundNotification, object: nil)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(stopTimer), name: UIApplication.willTerminateNotification, object: nil)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(startTimer), name: UIApplication.didBecomeActiveNotification, object: nil)
-    }
-    
-    //tapClick
+    //tapClick 点击事件
     @objc fileprivate func tapClick(_ gesture:UITapGestureRecognizer) {
         if block != nil {
             block!(currentImageIndex)
         }
-    }
-    
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-        log(message: "deinit")
     }
 }
 
