@@ -26,7 +26,8 @@ extension UILabel {
     ///计算单行文本宽度
     func textWidth() -> CGFloat {
         if text == nil {
-            fatalError("text is nil")
+            text = ""
+//            fatalError("text is nil")
         }
         
         return (self.text! as NSString).size(withAttributes: [NSAttributedString.Key.font:self.font]).width+2

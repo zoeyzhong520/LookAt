@@ -17,6 +17,7 @@ class HomeView: BaseView {
         tableView.dataSource = self
         tableView.registerClassOf(UITableViewCell.self)
         tableView.registerClassOf(HomeHotTableViewCell.self)
+        tableView.registerClassOf(HomeRecommendTableViewCell.self)
         return tableView
     }()
 
@@ -25,6 +26,9 @@ class HomeView: BaseView {
         let tableHeaderView = HomeHeaderView(frame: CGRect(x: 0, y: 0, width: self.bounds.size.width, height: HOME_BANNER_HEIGHT))
         return tableHeaderView
     }()
+    
+    ///分组标题数组
+    fileprivate var sectionTitlesArray = ["推荐","排行榜","企业专题"]
     
     ///adImagesArray
     var adImagesArray:[String?]? {
@@ -56,11 +60,25 @@ extension HomeView:UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return section == 0 ? 1 : 10
+        switch section {
+        case 0:
+            return 1
+        case 1:
+            return 3
+        default:
+            return 10
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return indexPath.section == 0 ? HOME_BANNER_HEIGHT : fontSizeScale(40)
+        switch indexPath.section {
+        case 0:
+            return HOME_BANNER_HEIGHT
+        case 1:
+            return fontSizeScale(125)
+        default:
+            return fontSizeScale(40)
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -68,7 +86,20 @@ extension HomeView:UITableViewDelegate, UITableViewDataSource {
             let cell:HomeHotTableViewCell = tableView.dequeueReusableCell()
             cell.selectionStyle = .none
             return cell
-        } else {
+        } else if indexPath.section == 1 {//recommend cell
+            let cell:HomeRecommendTableViewCell = tableView.dequeueReusableCell()
+            let model = HomeModel()
+            model.setValuesForKeys(
+                                   ["companyName":"支付宝（中国）网络技术有限公司",
+                                    "companyLocation":"杭州·互联网金融·1000-9999人",
+                                    "companyInfo":"点评229 面经565 问答80 职位589",
+                                    "companyHonor":"入选“2017年度最佳公司榜TOP100”",
+                                    "companyLogo":"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1538309240329&di=a0354f70f43aabb92ee3fdafec58e76e&imgtype=0&src=http%3A%2F%2Fimages.669pic.com%2Felement_pic%2F95%2F6%2F81%2F53%2F978f45e99fae88bde65934d7afaf92e1.jpg"]
+            )
+            cell.model = model
+            return cell
+        }
+        else {
             return tableView.dequeueReusableCell()
         }
     }
@@ -88,9 +119,9 @@ extension HomeView:UITableViewDelegate, UITableViewDataSource {
         if section > 0 {
             let header = HomeTableSectionHeaderView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 0))
             header.changeBatchButtonVisible = section == 1
-            header.titleText = "啦啦"
+            header.titleText = sectionTitlesArray[section-1]
             header.block = { [weak self] in
-                log(message: 1)
+                log(message: "换一批")
             }
             return header
         } else {

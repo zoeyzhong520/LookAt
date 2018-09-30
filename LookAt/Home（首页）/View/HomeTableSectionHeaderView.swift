@@ -21,6 +21,7 @@ class HomeTableSectionHeaderView: BaseView {
         let changeBatchButton = UIButton(withTitle: "换一批", titleColor: UIColor.grayTextColor, normalImage: UIImage.changeBatchImage, target: self, action: #selector(buttonClick(_:)))
         changeBatchButton.isHidden = true
         changeBatchButton.titleLabel?.font = UIFont.mediumFont
+        changeBatchButton.contentHorizontalAlignment = .right
         return changeBatchButton
     }()
     
@@ -75,13 +76,14 @@ class HomeTableSectionHeaderView: BaseView {
         titleLabel.snp.makeConstraints { (make) in
             make.top.equalTo(lineView.snp.bottom)
             make.bottom.equalToSuperview()
-            make.left.equalTo(fontSizeScale(20))
+            make.left.equalTo(fontSizeScale(10))
             make.width.equalTo(SCREEN_WIDTH/2)
         }
         
         changeBatchButton.snp.makeConstraints { (make) in
             make.top.equalTo(lineView.snp.bottom)
-            make.bottom.right.equalToSuperview()
+            make.bottom.equalToSuperview()
+            make.right.equalTo(-fontSizeScale(10))
             make.width.equalTo(fontSizeScale(100))
         }
         

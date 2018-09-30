@@ -423,14 +423,14 @@
 			isa = PBXGroup;
 			children = (
 				36B72425215A3C9500940A3D /* HomeView.swift */,
+				3677B9F9215F148800728EF9 /* HomeTableSectionHeaderView.swift */,
 				3677B90F215DDC5700728EF9 /* HomeHeaderView.swift */,
 				3677B911215DDCBF00728EF9 /* HomeAdvertisingPageView.swift */,
-				3677B9F9215F148800728EF9 /* HomeTableSectionHeaderView.swift */,
 				3677BA04215F27E300728EF9 /* HomeHotTableViewCell.swift */,
+				3635BA34215F53F800FAE00D /* HomeHotScrollView.swift */,
 				3677BA06215F280000728EF9 /* HomeRecommendTableViewCell.swift */,
 				3677BA08215F282800728EF9 /* HomeLeaderboardTableViewCell.swift */,
 				3677BA0A215F285700728EF9 /* HomeBusinessTopicTableViewCell.swift */,
-				3635BA34215F53F800FAE00D /* HomeHotScrollView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";

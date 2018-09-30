@@ -21,5 +21,9 @@ extension UIView {
         self.layer.cornerRadius = cornerRadius
     }
     
-    
+    ///设置边框，宽度默认1
+    func setBorder(withBorderWidth borderWidth:CGFloat = 1, borderColor:UIColor?) {
+        self.layer.borderWidth = borderWidth
+        self.layer.borderColor = borderColor?.cgColor
+    }
 }
