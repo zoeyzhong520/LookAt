@@ -17,4 +17,10 @@ class HomeModel: BaseModel {
     @objc var companyHonor:String?
     @objc var companyLogo:String?
     
+    //排行榜
+    @objc var homeLeaderboardImg:String?
+    @objc var homeLeaderboardTitle:String?
+    @objc var homeLeaderboardInfo:String?
+    
+    var homeLeaderboardCompanys:Array<String?>?
 }

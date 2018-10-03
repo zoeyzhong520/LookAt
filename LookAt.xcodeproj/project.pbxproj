@@ -57,6 +57,8 @@
 		36B72436215A3D2400940A3D /* MeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B72435215A3D2400940A3D /* MeModel.swift */; };
 		36B72438215A3D3200940A3D /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B72437215A3D3200940A3D /* MeViewController.swift */; };
 		36B7243B215A3E1400940A3D /* LookAtTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7243A215A3E1400940A3D /* LookAtTabBarViewController.swift */; };
+		BA096BCB2164A9110005374A /* HomeLeaderboardFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA096BCA2164A9110005374A /* HomeLeaderboardFlowLayout.swift */; };
+		BA096BD42164B51D0005374A /* HomeLeaderboardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA096BD32164B51D0005374A /* HomeLeaderboardCollectionViewCell.swift */; };
 		BA1EFE47215E6D6C0067698A /* LogTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1EFE46215E6D6C0067698A /* LogTool.swift */; };
 /* End PBXBuildFile section */
 
@@ -228,6 +230,8 @@
 		36B72435215A3D2400940A3D /* MeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeModel.swift; sourceTree = "<group>"; };
 		36B72437215A3D3200940A3D /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		36B7243A215A3E1400940A3D /* LookAtTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookAtTabBarViewController.swift; sourceTree = "<group>"; };
+		BA096BCA2164A9110005374A /* HomeLeaderboardFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLeaderboardFlowLayout.swift; sourceTree = "<group>"; };
+		BA096BD32164B51D0005374A /* HomeLeaderboardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLeaderboardCollectionViewCell.swift; sourceTree = "<group>"; };
 		BA1EFE46215E6D6C0067698A /* LogTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogTool.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -430,6 +434,8 @@
 				3635BA34215F53F800FAE00D /* HomeHotScrollView.swift */,
 				3677BA06215F280000728EF9 /* HomeRecommendTableViewCell.swift */,
 				3677BA08215F282800728EF9 /* HomeLeaderboardTableViewCell.swift */,
+				BA096BCA2164A9110005374A /* HomeLeaderboardFlowLayout.swift */,
+				BA096BD32164B51D0005374A /* HomeLeaderboardCollectionViewCell.swift */,
 				3677BA0A215F285700728EF9 /* HomeBusinessTopicTableViewCell.swift */,
 			);
 			path = View;
@@ -815,6 +821,7 @@
 				36B72432215A3D0A00940A3D /* NewsView.swift in Sources */,
 				36B7242E215A3CE800940A3D /* NewsViewController.swift in Sources */,
 				36B723DB215A383D00940A3D /* ViewController.swift in Sources */,
+				BA096BD42164B51D0005374A /* HomeLeaderboardCollectionViewCell.swift in Sources */,
 				3677B9F6215E21D000728EF9 /* UIViewController+Extension.swift in Sources */,
 				36B7242C215A3CDD00940A3D /* OldBirdViewController.swift in Sources */,
 				36B723D9215A383D00940A3D /* AppDelegate.swift in Sources */,
@@ -840,6 +847,7 @@
 				3677B9E7215E033300728EF9 /* UILabel+Extension.swift in Sources */,
 				3677B90E215DD32500728EF9 /* BaseNavigationViewController.swift in Sources */,
 				36B7241C215A3C2700940A3D /* BaseViewController.swift in Sources */,
+				BA096BCB2164A9110005374A /* HomeLeaderboardFlowLayout.swift in Sources */,
 				BA1EFE47215E6D6C0067698A /* LogTool.swift in Sources */,
 				36B72422215A3C5700940A3D /* HomeViewController.swift in Sources */,
 			);
