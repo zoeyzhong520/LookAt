@@ -23,4 +23,9 @@ class HomeModel: BaseModel {
     @objc var homeLeaderboardInfo:String?
     
     var homeLeaderboardCompanys:Array<String?>?
+    
+    //企业专题
+    @objc var homeBusinessTopicTitle:String?
+    @objc var homeBusinessTopicSubTitle:String?
+    @objc var homeBusinessTopicImg:String?
 }

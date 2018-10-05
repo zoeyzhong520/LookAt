@@ -19,6 +19,7 @@ class HomeView: BaseView {
         tableView.registerClassOf(HomeHotTableViewCell.self)
         tableView.registerClassOf(HomeRecommendTableViewCell.self)
         tableView.registerClassOf(HomeLeaderboardTableViewCell.self)
+        tableView.registerClassOf(HomeBusinessTopicTableViewCell.self)
         return tableView
     }()
 
@@ -38,6 +39,9 @@ class HomeView: BaseView {
         }
     }
     
+    ///delegate
+    var delegate:HomeViewDelegate?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         createView()
@@ -51,6 +55,13 @@ class HomeView: BaseView {
     fileprivate func createView() {
         addSubview(tableView)
         tableView.tableHeaderView = tableHeaderView
+    }
+    
+    //设置delegate
+    fileprivate func createDelegate(scrollView:UIScrollView) {
+        if delegate != nil {
+            delegate?.homeView_scrollViewDidScroll!(withScrollView: scrollView)
+        }
     }
 }
 
@@ -69,7 +80,7 @@ extension HomeView:UITableViewDelegate, UITableViewDataSource {
         case 2:
             return 2
         default:
-            return 10
+            return 11
         }
     }
     
@@ -81,6 +92,8 @@ extension HomeView:UITableViewDelegate, UITableViewDataSource {
             return fontSizeScale(125)
         case 2:
             return indexPath.row == 0 ? fontSizeScale(400) : fontSizeScale(40)
+        case 3:
+            return indexPath.row < 10 ? fontSizeScale(80) : fontSizeScale(40)
         default:
             return fontSizeScale(40)
         }
@@ -126,8 +139,25 @@ extension HomeView:UITableViewDelegate, UITableViewDataSource {
             }
             cell.selectionStyle = .none
             return cell
+        case 3:
+            if indexPath.row > 9 {
+                let cell:UITableViewCell = tableView.dequeueReusableCell()
+                cell.textLabel?.text = "查看全部专题"
+                cell.accessoryType = .disclosureIndicator
+                return cell
+            }
+            
+            let cell:HomeBusinessTopicTableViewCell = tableView.dequeueReusableCell()
+            let model = HomeModel()
+            model.setValuesForKeys([
+                "homeBusinessTopicTitle":"【特色】可以在家躺着上班的公司",
+                "homeBusinessTopicSubTitle":"200159查看 14家公司",
+                "homeBusinessTopicImg":"http://fc01.deviantart.com/fs45/f/2009/117/8/0/blue_reflections_2_by_Keischa_Assili.jpg"
+                ])
+            cell.model = model
+            return cell
         default:
-            return tableView.dequeueReusableCell()
+            return UITableViewCell()
         }
     }
     
@@ -163,5 +193,7 @@ extension HomeView:UITableViewDelegate, UITableViewDataSource {
         } else if scrollView.contentOffset.y >= HOMEVC_TABLE_SECTION_HEIGHT {
             scrollView.contentInset = UIEdgeInsets(top: -HOMEVC_TABLE_SECTION_HEIGHT, left: 0, bottom: 0, right: 0)
         }
+        
+        createDelegate(scrollView: scrollView)
     }
 }

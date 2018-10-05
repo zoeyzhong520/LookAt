@@ -13,8 +13,12 @@ class HomeViewController: BaseViewController {
     ///home view
     fileprivate lazy var homeView:HomeView = {
         let homeView = HomeView(frame: CGRect(x: 0, y: -STATUSBAR_HEIGHT, width: SCREEN_WIDTH, height: SCREEN_HEIGHT))
+        homeView.delegate = self
         return homeView
     }()
+    
+    ///show light statusBar
+    fileprivate var showLightStatusBar = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +38,7 @@ class HomeViewController: BaseViewController {
 
     //状态栏文字颜色
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+        return showLightStatusBar ? .lightContent : .default
     }
 }
 
@@ -42,5 +46,14 @@ extension HomeViewController:UINavigationControllerDelegate {
     
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
         self.navigationController?.setNavigationBarHidden(viewController.isKind(of: self.classForCoder), animated: true)
+    }
+}
+
+extension HomeViewController:HomeViewDelegate {
+    
+    func homeView_scrollViewDidScroll(withScrollView scrollView: UIScrollView) {
+        let offSetY = scrollView.contentOffset.y
+        showLightStatusBar = offSetY <= STATUSBAR_HEIGHT
+        navigationController?.setNeedsStatusBarAppearanceUpdate()
     }
 }

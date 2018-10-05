@@ -59,6 +59,7 @@
 		36B7243B215A3E1400940A3D /* LookAtTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7243A215A3E1400940A3D /* LookAtTabBarViewController.swift */; };
 		BA096BCB2164A9110005374A /* HomeLeaderboardFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA096BCA2164A9110005374A /* HomeLeaderboardFlowLayout.swift */; };
 		BA096BD42164B51D0005374A /* HomeLeaderboardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA096BD32164B51D0005374A /* HomeLeaderboardCollectionViewCell.swift */; };
+		BA148F6F21674B96001E3EAF /* ClassProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA148F6E21674B96001E3EAF /* ClassProtocol.swift */; };
 		BA1EFE47215E6D6C0067698A /* LogTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1EFE46215E6D6C0067698A /* LogTool.swift */; };
 /* End PBXBuildFile section */
 
@@ -232,6 +233,7 @@
 		36B7243A215A3E1400940A3D /* LookAtTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookAtTabBarViewController.swift; sourceTree = "<group>"; };
 		BA096BCA2164A9110005374A /* HomeLeaderboardFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLeaderboardFlowLayout.swift; sourceTree = "<group>"; };
 		BA096BD32164B51D0005374A /* HomeLeaderboardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLeaderboardCollectionViewCell.swift; sourceTree = "<group>"; };
+		BA148F6E21674B96001E3EAF /* ClassProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassProtocol.swift; sourceTree = "<group>"; };
 		BA1EFE46215E6D6C0067698A /* LogTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogTool.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -323,6 +325,7 @@
 			isa = PBXGroup;
 			children = (
 				3677B9ED215E0BDD00728EF9 /* Reusable.swift */,
+				BA148F6E21674B96001E3EAF /* ClassProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -842,6 +845,7 @@
 				36B72430215A3CFA00940A3D /* NewsModel.swift in Sources */,
 				36B72426215A3C9500940A3D /* HomeView.swift in Sources */,
 				3677B9FA215F148800728EF9 /* HomeTableSectionHeaderView.swift in Sources */,
+				BA148F6F21674B96001E3EAF /* ClassProtocol.swift in Sources */,
 				3677B9EE215E0BDD00728EF9 /* Reusable.swift in Sources */,
 				3677B8CC215B685800728EF9 /* UIImage+Extension.swift in Sources */,
 				3677B9E7215E033300728EF9 /* UILabel+Extension.swift in Sources */,
