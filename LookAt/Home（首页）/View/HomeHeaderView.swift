@@ -26,6 +26,8 @@ class HomeHeaderView: BaseView {
     fileprivate lazy var searchView:UIView = {
         let searchView = UIView(withBackgroundColor: UIColor.white)
         searchView.setCornerRadius()
+        //手势
+        searchView.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(searchViewTapAction(_:))))
         return searchView
     }()
     
@@ -47,6 +49,9 @@ class HomeHeaderView: BaseView {
             adPageView.imagesPathArray = adImagesArray
         }
     }
+    
+    ///Block
+    var block:noneParamsBlock?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -82,6 +87,13 @@ class HomeHeaderView: BaseView {
         searchPlaceholder.snp.makeConstraints { (make) in
             make.left.equalTo(searchImgView.snp.right).offset(fontSizeScale(10))
             make.top.bottom.right.equalTo(0)
+        }
+    }
+    
+    //点击事件
+    @objc fileprivate func searchViewTapAction(_ gesture:UITapGestureRecognizer) {
+        if block != nil {
+            block!()
         }
     }
 }

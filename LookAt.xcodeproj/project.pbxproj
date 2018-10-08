@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		3635BA35215F53F800FAE00D /* HomeHotScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3635BA34215F53F800FAE00D /* HomeHotScrollView.swift */; };
+		3635BA4F216AF73000FAE00D /* HomeNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3635BA4E216AF73000FAE00D /* HomeNavigationBar.swift */; };
+		3635BA59216AFF8A00FAE00D /* LookAtSearchTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3635BA58216AFF8A00FAE00D /* LookAtSearchTool.swift */; };
+		3635BA5B216B005400FAE00D /* LookAtSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3635BA5A216B005400FAE00D /* LookAtSearchBar.swift */; };
+		3635BA5D216B026600FAE00D /* LookAtTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3635BA5C216B026600FAE00D /* LookAtTabBar.swift */; };
+		3635BA5F216B387200FAE00D /* LookAtSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3635BA5E216B387200FAE00D /* LookAtSearchViewController.swift */; };
+		3635BA63216B3F3B00FAE00D /* LookAtSearchDefaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3635BA62216B3F3B00FAE00D /* LookAtSearchDefaultView.swift */; };
+		3635BA66216B498C00FAE00D /* LookAtSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3635BA65216B498C00FAE00D /* LookAtSearchModel.swift */; };
+		3635BA68216B4B9500FAE00D /* LookAtSearchDefaultHotCompanyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3635BA67216B4B9500FAE00D /* LookAtSearchDefaultHotCompanyTableViewCell.swift */; };
 		3677B8CC215B685800728EF9 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3677B8CB215B685800728EF9 /* UIImage+Extension.swift */; };
 		3677B8D2215B6E0A00728EF9 /* LookAtConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3677B8D1215B6E0A00728EF9 /* LookAtConfig.swift */; };
 		3677B8D4215B7A3C00728EF9 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3677B8D3215B7A3C00728EF9 /* UIFont+Extension.swift */; };
@@ -174,6 +182,14 @@
 
 /* Begin PBXFileReference section */
 		3635BA34215F53F800FAE00D /* HomeHotScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHotScrollView.swift; sourceTree = "<group>"; };
+		3635BA4E216AF73000FAE00D /* HomeNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationBar.swift; sourceTree = "<group>"; };
+		3635BA58216AFF8A00FAE00D /* LookAtSearchTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookAtSearchTool.swift; sourceTree = "<group>"; };
+		3635BA5A216B005400FAE00D /* LookAtSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookAtSearchBar.swift; sourceTree = "<group>"; };
+		3635BA5C216B026600FAE00D /* LookAtTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookAtTabBar.swift; sourceTree = "<group>"; };
+		3635BA5E216B387200FAE00D /* LookAtSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookAtSearchViewController.swift; sourceTree = "<group>"; };
+		3635BA62216B3F3B00FAE00D /* LookAtSearchDefaultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookAtSearchDefaultView.swift; sourceTree = "<group>"; };
+		3635BA65216B498C00FAE00D /* LookAtSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookAtSearchModel.swift; sourceTree = "<group>"; };
+		3635BA67216B4B9500FAE00D /* LookAtSearchDefaultHotCompanyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookAtSearchDefaultHotCompanyTableViewCell.swift; sourceTree = "<group>"; };
 		3677B8CB215B685800728EF9 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		3677B8D1215B6E0A00728EF9 /* LookAtConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookAtConfig.swift; sourceTree = "<group>"; };
 		3677B8D3215B7A3C00728EF9 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
@@ -264,6 +280,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3635BA57216AFF7D00FAE00D /* LookAtSearchTool */ = {
+			isa = PBXGroup;
+			children = (
+				3635BA61216B388B00FAE00D /* Controller */,
+				3635BA64216B496300FAE00D /* Model */,
+				3635BA60216B388B00FAE00D /* View */,
+			);
+			path = LookAtSearchTool;
+			sourceTree = "<group>";
+		};
+		3635BA60216B388B00FAE00D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3635BA58216AFF8A00FAE00D /* LookAtSearchTool.swift */,
+				3635BA5A216B005400FAE00D /* LookAtSearchBar.swift */,
+				3635BA62216B3F3B00FAE00D /* LookAtSearchDefaultView.swift */,
+				3635BA67216B4B9500FAE00D /* LookAtSearchDefaultHotCompanyTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3635BA61216B388B00FAE00D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3635BA5E216B387200FAE00D /* LookAtSearchViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3635BA64216B496300FAE00D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3635BA65216B498C00FAE00D /* LookAtSearchModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		3677B8CA215B683F00728EF9 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -285,8 +338,10 @@
 		3677B8D0215B6DFD00728EF9 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				3635BA57216AFF7D00FAE00D /* LookAtSearchTool */,
 				3677B8D1215B6E0A00728EF9 /* LookAtConfig.swift */,
 				BA1EFE46215E6D6C0067698A /* LogTool.swift */,
+				3635BA5C216B026600FAE00D /* LookAtTabBar.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -432,6 +487,7 @@
 				36B72425215A3C9500940A3D /* HomeView.swift */,
 				3677B9F9215F148800728EF9 /* HomeTableSectionHeaderView.swift */,
 				3677B90F215DDC5700728EF9 /* HomeHeaderView.swift */,
+				3635BA4E216AF73000FAE00D /* HomeNavigationBar.swift */,
 				3677B911215DDCBF00728EF9 /* HomeAdvertisingPageView.swift */,
 				3677BA04215F27E300728EF9 /* HomeHotTableViewCell.swift */,
 				3635BA34215F53F800FAE00D /* HomeHotScrollView.swift */,
@@ -812,9 +868,12 @@
 				3677BA05215F27E300728EF9 /* HomeHotTableViewCell.swift in Sources */,
 				3677B8D4215B7A3C00728EF9 /* UIFont+Extension.swift in Sources */,
 				3677B9F4215E1D3D00728EF9 /* String+Extension.swift in Sources */,
+				3635BA68216B4B9500FAE00D /* LookAtSearchDefaultHotCompanyTableViewCell.swift in Sources */,
 				36B72438215A3D3200940A3D /* MeViewController.swift in Sources */,
 				3677BA0E215F290900728EF9 /* LookAtButton.swift in Sources */,
+				3635BA5B216B005400FAE00D /* LookAtSearchBar.swift in Sources */,
 				3677B9B9215DF75A00728EF9 /* UIImageView+Extension.swift in Sources */,
+				3635BA4F216AF73000FAE00D /* HomeNavigationBar.swift in Sources */,
 				36B72424215A3C6F00940A3D /* HomeModel.swift in Sources */,
 				3677BA03215F15A100728EF9 /* UIButton+Extension.swift in Sources */,
 				3677B9F0215E15AC00728EF9 /* UICollectionView+Extension.swift in Sources */,
@@ -823,11 +882,14 @@
 				36B7242A215A3CCE00940A3D /* OldBirdModel.swift in Sources */,
 				36B72432215A3D0A00940A3D /* NewsView.swift in Sources */,
 				36B7242E215A3CE800940A3D /* NewsViewController.swift in Sources */,
+				3635BA5F216B387200FAE00D /* LookAtSearchViewController.swift in Sources */,
 				36B723DB215A383D00940A3D /* ViewController.swift in Sources */,
 				BA096BD42164B51D0005374A /* HomeLeaderboardCollectionViewCell.swift in Sources */,
 				3677B9F6215E21D000728EF9 /* UIViewController+Extension.swift in Sources */,
 				36B7242C215A3CDD00940A3D /* OldBirdViewController.swift in Sources */,
+				3635BA5D216B026600FAE00D /* LookAtTabBar.swift in Sources */,
 				36B723D9215A383D00940A3D /* AppDelegate.swift in Sources */,
+				3635BA63216B3F3B00FAE00D /* LookAtSearchDefaultView.swift in Sources */,
 				3635BA35215F53F800FAE00D /* HomeHotScrollView.swift in Sources */,
 				3677B9E5215E025900728EF9 /* UIView+Extension.swift in Sources */,
 				3677BA07215F280000728EF9 /* HomeRecommendTableViewCell.swift in Sources */,
@@ -835,6 +897,7 @@
 				3677B910215DDC5700728EF9 /* HomeHeaderView.swift in Sources */,
 				36B72420215A3C4300940A3D /* BaseView.swift in Sources */,
 				3677BA0B215F285700728EF9 /* HomeBusinessTopicTableViewCell.swift in Sources */,
+				3635BA66216B498C00FAE00D /* LookAtSearchModel.swift in Sources */,
 				36B7243B215A3E1400940A3D /* LookAtTabBarViewController.swift in Sources */,
 				3677B912215DDCBF00728EF9 /* HomeAdvertisingPageView.swift in Sources */,
 				36B72434215A3D1700940A3D /* MeView.swift in Sources */,
@@ -845,6 +908,7 @@
 				36B72430215A3CFA00940A3D /* NewsModel.swift in Sources */,
 				36B72426215A3C9500940A3D /* HomeView.swift in Sources */,
 				3677B9FA215F148800728EF9 /* HomeTableSectionHeaderView.swift in Sources */,
+				3635BA59216AFF8A00FAE00D /* LookAtSearchTool.swift in Sources */,
 				BA148F6F21674B96001E3EAF /* ClassProtocol.swift in Sources */,
 				3677B9EE215E0BDD00728EF9 /* Reusable.swift in Sources */,
 				3677B8CC215B685800728EF9 /* UIImage+Extension.swift in Sources */,

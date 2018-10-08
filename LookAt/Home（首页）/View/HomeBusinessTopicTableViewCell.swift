@@ -58,19 +58,19 @@ class HomeBusinessTopicTableViewCell: UITableViewCell {
         //constraints
         imgView.snp.makeConstraints { (make) in
             make.centerY.equalToSuperview()
-            make.size.equalTo(CGSize(width: fontSizeScale(90), height: fontSizeScale(60)))
+            make.size.equalTo(CGSize(width: fontSizeScale(100), height: fontSizeScale(70)))
             make.right.equalTo(-fontSizeScale(10))
         }
         
         titleLabel.snp.makeConstraints { (make) in
             make.top.equalTo(fontSizeScale(20))
-            make.left.equalTo(fontSizeScale(15))
+            make.left.equalTo(fontSizeScale(10))
             make.right.equalTo(imgView.snp.left)
             make.height.equalTo(fontSizeScale(16))
         }
         
         subTitleLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(fontSizeScale(20))
+            make.left.equalTo(fontSizeScale(15))
             make.bottom.equalTo(-fontSizeScale(10))
             make.right.equalTo(imgView.snp.left)
             make.height.equalTo(fontSizeScale(20))

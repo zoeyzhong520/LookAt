@@ -49,6 +49,9 @@ let HOME_BANNER_HEIGHT = fontSizeScale(180) + STATUSBAR_HEIGHT
 ///homeVC table section height
 let HOMEVC_TABLE_SECTION_HEIGHT = fontSizeScale(56)
 
+///lookAt search tool searchBar height
+let LOOKATSEARCHTOOL_SEARCHBAR_HEIGHT = fontSizeScale(44)
+
 /*
  设备
  */
@@ -97,6 +100,11 @@ let iPhoneXR = IS_IPHONE && SCREEN_MAX_LENGTH == 896.0
 /*
  通知
  */
+///LookAtSearchTool show notification
+let LOOKATSEARCHTOOL_SHOWNOTIFICATION = Notification.Name.init("LOOKATSEARCHTOOL_SHOWNOTIFICATION")
+
+///LookAtSearchTool hide notification
+let LOOKATSEARCHTOOL_HIDENOTIFICATION = Notification.Name.init("LOOKATSEARCHTOOL_HIDENOTIFICATION")
 
 /*
  闭包
@@ -106,3 +114,9 @@ typealias commonBlock<T> = (T) -> Void
 
 ///noneParamsBlock
 typealias noneParamsBlock = () -> Void
+
+/*
+ 动画时长
+ */
+///animate duration
+let ANIMATE_DURATION:Double = 0.25

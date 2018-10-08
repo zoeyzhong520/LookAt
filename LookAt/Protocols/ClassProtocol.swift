@@ -12,3 +12,7 @@ import UIKit
 @objc protocol HomeViewDelegate:NSObjectProtocol {
     @objc optional func homeView_scrollViewDidScroll(withScrollView scrollView:UIScrollView)
 }
+
+@objc protocol LookAtSearchToolDelegete:NSObjectProtocol {
+    @objc optional func lookAtSearchTool_searchBarCancelButtonClicked()
+}

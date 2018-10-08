@@ -26,6 +26,10 @@ class HomeView: BaseView {
     ///table header view
     fileprivate lazy var tableHeaderView:HomeHeaderView = {
         let tableHeaderView = HomeHeaderView(frame: CGRect(x: 0, y: 0, width: self.bounds.size.width, height: HOME_BANNER_HEIGHT))
+        tableHeaderView.block = { [weak self] in
+            log(message: "点击首页banner搜索框")
+            
+        }
         return tableHeaderView
     }()
     
@@ -63,6 +67,7 @@ class HomeView: BaseView {
             delegate?.homeView_scrollViewDidScroll!(withScrollView: scrollView)
         }
     }
+    
 }
 
 extension HomeView:UITableViewDelegate, UITableViewDataSource {
@@ -93,7 +98,7 @@ extension HomeView:UITableViewDelegate, UITableViewDataSource {
         case 2:
             return indexPath.row == 0 ? fontSizeScale(400) : fontSizeScale(40)
         case 3:
-            return indexPath.row < 10 ? fontSizeScale(80) : fontSizeScale(40)
+            return indexPath.row < 10 ? fontSizeScale(100) : fontSizeScale(40)
         default:
             return fontSizeScale(40)
         }
