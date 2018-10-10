@@ -23,7 +23,6 @@ class LookAtSearchBar: UISearchBar {
         
         searchTextField.frame = CGRect(x: 10, y: (bounds.size.height-searchTextFieldH)/2, width: SCREEN_WIDTH-60, height: searchTextFieldH)
         searchTextField.setCornerRadius(withCornerRadius: searchTextFieldH/2)
-        searchTextField.backgroundColor = UIColor.lineColor
         
         //设置placeholder字体
         searchTextField.setValue(UIFont.mediumFont, forKeyPath: "_placeholderLabel.font")
