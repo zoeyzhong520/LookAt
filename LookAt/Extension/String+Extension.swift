@@ -29,4 +29,9 @@ extension String {
     static var homeBannerImagePath4:String {
         return "http://pic28.photophoto.cn/20130801/0006019338033465_b.jpg"
     }
+    
+    ///LookAt SearchTool搜索记录保存位置
+    static var lookAtSearchToolSearchHistorySavePath:String {
+        return (NSHomeDirectory() as NSString).appendingPathComponent("Documents/lookAtSearchToolSearchHistory.realm")
+    }
 }
