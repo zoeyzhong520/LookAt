@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 //MARK: LookAtSearch DefaultView
 
@@ -27,6 +28,12 @@ class LookAtSearchDefaultView: UIView {
     
     ///model
     var model:LookAtSearchModel? {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
+    var keywords:Results<LookAtSearchKeyword>? {
         didSet {
             tableView.reloadData()
         }
@@ -57,14 +64,17 @@ class LookAtSearchDefaultView: UIView {
 extension LookAtSearchDefaultView:UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return section == 0 ? (model?.hotCompanys?.count ?? 0) : 20
+        
+        guard let num = keywords?.count else { return section == 0 ? (model?.hotCompanys?.count ?? 0) : 0 }
+        return section == 0 ? (model?.hotCompanys?.count ?? 0) : num
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         if indexPath.section == 0 {
             let cell:LookAtSearchDefaultHotCompanyTableViewCell = tableView.dequeueReusableCell()
             cell.model = self.model?.hotCompanys?[indexPath.row]
@@ -74,7 +84,9 @@ extension LookAtSearchDefaultView:UITableViewDelegate, UITableViewDataSource {
             cell.selectionStyle = .none
             return cell
         } else {
-            return tableView.dequeueReusableCell()
+            let cell:UITableViewCell = tableView.dequeueReusableCell()
+            cell.textLabel?.text = keywords?[indexPath.row].keyword
+            return cell
         }
     }
     

@@ -7,10 +7,16 @@
 //
 
 import UIKit
+import RealmSwift
 
 class LookAtSearchModel: BaseModel {
 
     //热门公司
     var hotCompanys:Array<Array<String?>>?
     
+}
+
+class LookAtSearchKeyword: Object {
+    
+    @objc dynamic var keyword:String?
 }

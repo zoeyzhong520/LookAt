@@ -47,7 +47,7 @@ class HomeViewController: BaseViewController {
         
         //home view
         view.addSubview(homeView)
-        homeView.adImagesArray = [String.homeBannerImagePath1,String.homeBannerImagePath2,String.homeBannerImagePath3,String.homeBannerImagePath4]
+        homeView.adImagesArray = [String.homeBannerImagePath1,String.homeBannerImagePath2,String.homeBannerImagePath4]
         
         //home navigationbar
         view.addSubview(homeNavigationBar)

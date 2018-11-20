@@ -15,4 +15,5 @@ import UIKit
 
 @objc protocol LookAtSearchToolDelegete:NSObjectProtocol {
     @objc optional func lookAtSearchTool_searchBarCancelButtonClicked()
+    @objc optional func lookAtSearchTool_resultCellClickWithKeyword(keyword:String)
 }

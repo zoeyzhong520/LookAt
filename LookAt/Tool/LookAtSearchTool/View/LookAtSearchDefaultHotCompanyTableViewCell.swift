@@ -11,7 +11,7 @@ import UIKit
 //MARK: LookAtSearch Default hot company TableViewCell
 
 class LookAtSearchDefaultHotCompanyTableViewCell: UITableViewCell {
-
+    
     ///model
     var model:Array<String?>? {
         didSet {
@@ -48,6 +48,11 @@ class LookAtSearchDefaultHotCompanyTableViewCell: UITableViewCell {
     
     //config companysView
     fileprivate func configCompanysView() {
+        
+        for view:UIView in self.contentView.subviews {
+            view.removeFromSuperview()
+        }
+        
         let buttonW:CGFloat = SCREEN_WIDTH/3
         let buttonH:CGFloat = bounds.size.height
         
@@ -55,9 +60,9 @@ class LookAtSearchDefaultHotCompanyTableViewCell: UITableViewCell {
             fatalError("model is nil")
         }
         
-        if buttonsArray.count == companysArray.count {
-            return
-        }
+//        if buttonsArray.count == companysArray.count {
+//            return
+//        }
         
         for i in 0..<companysArray.count {
             let button = UIButton(withTitle: companysArray[i], titleColor: UIColor.blackTextColor, normalImage: nil, target: self, action: #selector(buttonClick(_:)))

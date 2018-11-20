@@ -239,7 +239,7 @@ extension HomeAdvertisingPageView:UIScrollViewDelegate {
         reloadImages()
         scrollView.contentOffset = CGPoint(x: SCREEN_WIDTH, y: 0)
         pageControl.currentPage = currentImageIndex
-        log(message: currentImageIndex)
+//        log(message: currentImageIndex)
     }
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {

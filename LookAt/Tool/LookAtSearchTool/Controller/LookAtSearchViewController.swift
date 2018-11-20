@@ -9,7 +9,7 @@
 import UIKit
 
 class LookAtSearchViewController: BaseViewController {
-
+    
     ///lookAt search tool
     fileprivate lazy var lookAtSearchTool:LookAtSearchTool = {
         let tool = LookAtSearchTool(frame: self.view.bounds)
@@ -32,12 +32,16 @@ class LookAtSearchViewController: BaseViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .default
     }
-
 }
 
 extension LookAtSearchViewController:LookAtSearchToolDelegete {
     
     func lookAtSearchTool_searchBarCancelButtonClicked() {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func lookAtSearchTool_resultCellClickWithKeyword(keyword: String) {
+        log(message: "keyword===\(keyword)")
         dismiss(animated: true, completion: nil)
     }
 }
