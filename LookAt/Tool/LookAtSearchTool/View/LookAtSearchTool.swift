@@ -7,13 +7,10 @@
 //
 
 import UIKit
-import RealmSwift
 
 //MARK: LookAt SearchTool
 
 class LookAtSearchTool: UIView {
-    
-    fileprivate var keywords:Results<LookAtSearchKeyword>?
     
     ///searchBar
     fileprivate lazy var searchBar:LookAtSearchBar = {
@@ -33,7 +30,7 @@ class LookAtSearchTool: UIView {
     }()
     
     ///searchDefaultView
-    fileprivate lazy var defaultView:LookAtSearchDefaultView = {
+    lazy var defaultView:LookAtSearchDefaultView = {
         let view = LookAtSearchDefaultView(frame: CGRect(x: 0, y: tabBar.frame.maxY, width: SCREEN_WIDTH, height: self.bounds.size.height-SEARCHBAR_HEIGHT*2-STATUSBAR_HEIGHT))
         view.scrollViewDidScrollBlock = { [weak self] scrollView in
             if scrollView.contentOffset.y != 0 {
@@ -44,12 +41,12 @@ class LookAtSearchTool: UIView {
     }()
     
     ///searchResultView
-    fileprivate lazy var resultView:LookAtSearchResultView = {
+    lazy var resultView:LookAtSearchResultView = {
         let view = LookAtSearchResultView(frame: CGRect(x: 0, y: tabBar.frame.maxY, width: SCREEN_WIDTH, height: self.bounds.size.height-SEARCHBAR_HEIGHT*2-STATUSBAR_HEIGHT))
         view.isHidden = true
-        view.cellClickBlock = { [weak self] keyword in
-            self?.saveKeyword()
-            self?.createResultCellClickDelegate(withKeyword: keyword)
+        view.cellClickBlock = { [weak self] result in
+            self?.searchBar.resignFirstResponder()
+            self?.createResultCellClickDelegate(withKeyword: self?.searchBar.text ?? "", andResult: result)
         }
         return view
     }()
@@ -72,33 +69,6 @@ class LookAtSearchTool: UIView {
         addSubview(tabBar)
         addSubview(defaultView)
         addSubview(resultView)
-        
-        //数据
-        let defaultViewModel = LookAtSearchModel()
-        defaultViewModel.hotCompanys = [
-            [   "途牛旅行网",
-                "苹果（Apple）",
-                "渣打"
-            ],
-            [
-                "搜狐",
-                "德勤中国",
-                "美团网"
-            ]
-        ]
-        defaultView.model = defaultViewModel
-        
-        //获取搜索的关键字
-        getKeywords()
-        
-        resultView.resultModel = ["0","1","2","3","4"]
-    }
-    
-    fileprivate func getKeywords() {
-        
-        keywords = try! Realm().objects(LookAtSearchKeyword.self)
-        defaultView.keywords = keywords
-        log(message: keywords)
     }
     
     //设置delegate
@@ -108,9 +78,9 @@ class LookAtSearchTool: UIView {
         }
     }
     
-    fileprivate func createResultCellClickDelegate(withKeyword keyword:String) {
+    fileprivate func createResultCellClickDelegate(withKeyword keyword:String, andResult result:String) {
         if delegate != nil {
-            delegate?.lookAtSearchTool_resultCellClickWithKeyword!(keyword:keyword)
+            delegate?.lookAtSearchTool_resultCellClickWithKeyword!(keyword:keyword, andResul: result)
         }
     }
 }
@@ -127,27 +97,8 @@ extension LookAtSearchTool:UISearchBarDelegate {
         let isShow = searchText == "" || (searchText as NSString).range(of: " ").length > 0
         resultView.isHidden = isShow
         defaultView.isHidden = !isShow
-        if isShow {
-            getKeywords()
-        }
     }
     
-    //存储搜索keyword
-    fileprivate func saveKeyword() {
-        
-        let keyword = searchBar.text ?? ""
-        
-        if keyword.count <= 0 || keyword == "" || (keyword as NSString).range(of: " ").length > 0 {
-            return
-        }
-        
-        let realm = try! Realm()
-        let keywordObject = LookAtSearchKeyword()
-        keywordObject.keyword = keyword
-        try! realm.write {
-            realm.add(keywordObject)
-        }
-    }
 }
 
 

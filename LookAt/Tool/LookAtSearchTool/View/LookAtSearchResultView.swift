@@ -54,7 +54,7 @@ extension LookAtSearchResultView: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell:UITableViewCell = tableView.dequeueReusableCell()
-        cell.textLabel?.text = "\(indexPath.row)"
+        cell.textLabel?.text = resultModel?[indexPath.row]
         return cell
     }
     

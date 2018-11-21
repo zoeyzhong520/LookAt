@@ -25,6 +25,9 @@ class HomeViewController: BaseViewController {
     fileprivate lazy var homeView:HomeView = {
         let homeView = HomeView(frame: CGRect(x: 0, y: -STATUSBAR_HEIGHT, width: SCREEN_WIDTH, height: SCREEN_HEIGHT))
         homeView.delegate = self
+        homeView.searchBarBlock = { [weak self] in
+            self?.presentLookAtSearchTool()
+        }
         return homeView
     }()
     

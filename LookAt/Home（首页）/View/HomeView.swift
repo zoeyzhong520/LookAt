@@ -10,6 +10,8 @@ import UIKit
 
 class HomeView: BaseView {
 
+    var searchBarBlock:noneParamsBlock?
+    
     ///table view
     fileprivate lazy var tableView:UITableView = {
         let tableView = UITableView(frame: self.bounds, style: .plain)
@@ -28,7 +30,9 @@ class HomeView: BaseView {
         let tableHeaderView = HomeHeaderView(frame: CGRect(x: 0, y: 0, width: self.bounds.size.width, height: HOME_BANNER_HEIGHT))
         tableHeaderView.block = { [weak self] in
             log(message: "点击首页banner搜索框")
-            
+            if self?.searchBarBlock != nil {
+                self?.searchBarBlock!()
+            }
         }
         return tableHeaderView
     }()
